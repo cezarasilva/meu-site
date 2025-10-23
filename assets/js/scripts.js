@@ -18,24 +18,24 @@ resumeBtns.forEach((btn, idx) => {
   });
 });
 
- // Seleciona todos os links do menu
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section');
+// // Seleciona todos os links do menu
+// const navLinks = document.querySelectorAll(".nav-link");
+// const sections = document.querySelectorAll("section");
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault(); // Evita o comportamento padrão do link
-      
-      // Remove 'active' de todos os links e seções
-      navLinks.forEach(link => link.classList.remove('active'));
-      sections.forEach(section => section.classList.remove('active'));
+// navLinks.forEach((link) => {
+//   link.addEventListener("click", (e) => {
+//     e.preventDefault(); // Evita o comportamento padrão do link
 
-      // Adiciona 'active' ao link clicado
-      link.classList.add('active');
+//     // Remove 'active' de todos os links e seções
+//     navLinks.forEach((link) => link.classList.remove("active"));
+//     sections.forEach((section) => section.classList.remove("active"));
 
-      // Acha a seção correspondente
-      const target = link.getAttribute('data-target');
-      const section = document.querySelector(`.${target}`);
-      if (section) section.classList.add('active');
-    });
-  });
+//     // Adiciona 'active' ao link clicado
+//     link.classList.add("active");
+
+//     // Acha a seção correspondente
+//     const target = link.getAttribute("data-target");
+//     const section = document.querySelector(`.${target}`);
+//     if (section) section.classList.add("active");
+//   });
+// });

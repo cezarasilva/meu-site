@@ -14,28 +14,69 @@ resumeBtns.forEach((btn, idx) => {
       detail.classList.remove("active");
     });
 
-    resumeDetails[idx].classList.add("active")
+    resumeDetails[idx].classList.add("active");
   });
 });
 
-// // Seleciona todos os links do menu
-// const navLinks = document.querySelectorAll(".nav-link");
-// const sections = document.querySelectorAll("section");
+const arrowRight = document.querySelector(
+  ".portifolio-box .navigation .arrow-right"
+);
+const arrowLeft = document.querySelector(
+  ".portifolio-box .navigation .arrow-left"
+);
 
-// navLinks.forEach((link) => {
-//   link.addEventListener("click", (e) => {
-//     e.preventDefault(); // Evita o comportamento padrão do link
+let index = 0;
 
-//     // Remove 'active' de todos os links e seções
-//     navLinks.forEach((link) => link.classList.remove("active"));
-//     sections.forEach((section) => section.classList.remove("active"));
+const activePortifolio = () => {
+  const imgSlide = document.querySelector(".portifolio-carousel .img-slide");
+  if (imgSlide) {
+    imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
+  }
+};
 
-//     // Adiciona 'active' ao link clicado
-//     link.classList.add("active");
+arrowRight.addEventListener("click", () => {
+  if (index < 4) {
+    index++;
+    arrowLeft.classList.remove('disabled');
+  } else {
+    index = 5; 
+    arrowRight.classList.add('disabled');
+  }
 
-//     // Acha a seção correspondente
-//     const target = link.getAttribute("data-target");
-//     const section = document.querySelector(`.${target}`);
-//     if (section) section.classList.add("active");
-//   });
-// });
+  activePortifolio();
+});
+
+arrowLeft.addEventListener("click", () => {
+  if (index > 1) {
+    index--;
+    arrowRight.classList.remove('disabled');
+  } else {
+    index = 0;
+    arrowLeft.classList.add('disabled');
+  }
+
+  activePortifolio();
+});
+
+
+// Seleciona todos os links do menu
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // Evita o comportamento padrão do link
+
+    // Remove 'active' de todos os links e seções
+    navLinks.forEach((link) => link.classList.remove("active"));
+    sections.forEach((section) => section.classList.remove("active"));
+
+    // Adiciona 'active' ao link clicado
+    link.classList.add("active");
+
+    // Acha a seção correspondente
+    const target = link.getAttribute("data-target");
+    const section = document.querySelector(`.${target}`);
+    if (section) section.classList.add("active");
+  });
+});

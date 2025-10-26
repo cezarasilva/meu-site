@@ -110,10 +110,8 @@ nav a.active {
   width: 100%;
   height: 100%;
   background: var(--bg-color);
-  /* border: 4px solid var(--bg-color); */
   animation: hide-bars 0.5s ease-in-out both;
   animation-delay: calc(0.1s * var(--i));
-  /* border: 2px solid red; */
 }
 
 @keyframes hide-bars {
@@ -342,6 +340,9 @@ section.active {
   color: var(--main-color);
 }
 
+
+/* SERVICES SECTION  */
+
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -413,6 +414,8 @@ section.active {
 .services-box p {
   font-size: 1.6rem;
 }
+
+/* RESUME SECTION  */
 
 .resume-container {
   display: grid;
@@ -581,6 +584,8 @@ section.active {
   font-size: 1.5rem;
 }
 
+/* PORTIFOLIO SECTION  */
+
 .portifolio-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -714,6 +719,8 @@ section.active {
 .portifolio-box .navigation .arrow-right {
   margin-left: 1.5rem;
 }
+
+/* CONTACT SECTION  */
 
 .contact-container {
   display: grid;

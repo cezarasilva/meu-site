@@ -18,6 +18,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/png" href="assets/img/code-alt.png">
+
   </head>
 
   <body>
@@ -659,14 +661,15 @@
         </div>
 
         <div class="contact-box">
-          <form action="">
+          <form name="Contact" method="POST" data-netlify="true" action="/Obrigado.html">
+            <input type="hidden" name="form-name" value="contact">
             <h2 class="heading">Contate <span>Me!</span></h2>
             <div class="field-box">
-              <input type="text" placeholder="Nome completo" required>
-              <input type="email" placeholder="E-mail" required>
-              <input type="text" placeholder="Telefone" required>
-              <input type="text" placeholder="Assunto do E-mail" required>
-              <textarea name="" id="" placeholder="Digite aqui sua menssagem1"></textarea>
+              <input name="nome" type="text" placeholder="Nome completo" required>
+              <input name="email" type="email" placeholder="E-mail" required>
+              <input name="telefone" type="text" placeholder="Telefone" required>
+              <input name="assunto" type="text" placeholder="Assunto do E-mail" required>
+              <textarea name="mensagem" id="" placeholder="Digite aqui sua menssagem1"></textarea>
             </div>
             <button type="submit" class="btn">Enviar Mensagem</button>
           </form>

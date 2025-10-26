@@ -4,9 +4,9 @@ const sections = document.querySelectorAll("section");
 const menuIcon = document.querySelector("#menu-icon");
 const navBar = document.querySelector("header nav");
 
-menuIcon.addEventListener('click', () => {
-  menuIcon.classList.toggle('bx-x');
-  navBar.classList.toggle('active');
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.toggle("bx-x");
+  navBar.classList.toggle("active");
 });
 
 const activePage = () => {
@@ -18,11 +18,10 @@ const activePage = () => {
     header.classList.add("active");
   }, 1100);
 
-  
   navLinks.forEach((section) => {
     section.classList.remove("active");
   });
-  
+
   barsBox.classList.remove("active");
   setTimeout(() => {
     barsBox.classList.add("active");
@@ -31,10 +30,8 @@ const activePage = () => {
     link.classList.remove("active");
   });
 
-  menuIcon.classList.remove('bx-x');
-  navBar.classList.remove('active');
-
-
+  menuIcon.classList.remove("bx-x");
+  navBar.classList.remove("active");
 };
 
 navLinks.forEach((link, idx) => {
@@ -45,14 +42,11 @@ navLinks.forEach((link, idx) => {
       link.classList.add("active");
 
       setTimeout(() => {
-        sections[idx].classList.add('active');
+        sections[idx].classList.add("active");
       }, 1100);
-
     }
   });
 });
-
-
 
 logoLink.addEventListener("click", () => {
   if (!navLinks[0].classList.contains("active")) {
@@ -61,8 +55,8 @@ logoLink.addEventListener("click", () => {
     navLinks[0].classList.add("active");
 
     setTimeout(() => {
-        sections[0].classList.add('active');
-      }, 1100);
+      sections[0].classList.add("active");
+    }, 1100);
   }
 });
 

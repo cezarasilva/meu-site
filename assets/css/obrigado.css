@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --main-color: #006ce8;
+  --white-color: #fff;
+  --disabled-color: #fff3;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--white-color);
+  scroll-behavior: smooth;
+  background: var(--bg-color);
+}
+
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10rem 9% 2rem;
+}
+
+.menssage-send-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 2rem;
+  padding: 20rem 10rem;
+  background-color: var(--second-bg-color);
+  transition: 2s;
+}
+
+.menssage-send-container:hover {
+    border: .1rem solid var(--main-color);
+}
+
+.menssage-send-container h1 {
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+.menssage-send-container p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.menssage-send-container .btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.6rem;
+  color: var(--bg-color);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menssage-send-container .btn:hover {
+  background: transparent;
+  color: var(--main-color);
+  box-shadow: none;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .menssage-send-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 1rem;
+    gap: .5rem;
+  }
+
+  .menssage-send-container p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .menssage-send-container .btn {
+    padding: 1rem 2rem;
+     
+  }
+
+  .menssage-send-container .btn i {
+    display: none;
+  }
+}

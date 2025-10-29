@@ -340,7 +340,6 @@ section.active {
   color: var(--main-color);
 }
 
-
 /* SERVICES SECTION  */
 
 .services-container {
@@ -466,6 +465,7 @@ section.active {
 }
 
 .resume-list {
+  /* background-color: red; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2rem;
@@ -493,6 +493,7 @@ section.active {
   padding: 3rem 2.5rem;
   height: calc((45rem - 2rem) / 2);
   display: flex;
+  height: auto;
   flex-direction: column;
   justify-content: center;
 }

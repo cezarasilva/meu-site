@@ -744,6 +744,10 @@ section.active {
 .contact-box .desc {
   margin: 1.5rem 0 2.5rem;
 }
+.contact-box .desc span {
+  font-size: 2rem;
+  color: var(--main-color);
+}
 
 .contact-box .contact-detail {
   display: flex;

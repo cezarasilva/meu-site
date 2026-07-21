@@ -5,6 +5,9 @@ const menuIcon = document.querySelector("#menu-icon");
 const navBar = document.querySelector("header nav");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const hasGsap = () => typeof window.gsap !== "undefined" && !reduceMotion;
+const sectionTargets = Array.from(navLinks).map((link) => link.dataset.target);
+
+const getSectionIndex = (target) => sectionTargets.indexOf(target);
 
 const animateItems = (items, options = {}) => {
   if (!hasGsap() || !items || items.length === 0) return;
@@ -88,11 +91,14 @@ const activePage = () => {
 };
 
 navLinks.forEach((link, idx) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
     if (!link.classList.contains("active")) {
       activePage();
 
       link.classList.add("active");
+      window.history.replaceState(null, "", `#${link.dataset.target}`);
 
       setTimeout(() => {
         showSection(idx);
@@ -102,6 +108,8 @@ navLinks.forEach((link, idx) => {
 });
 
 logoLink.addEventListener("click", () => {
+  window.history.replaceState(null, "", "#home");
+
   if (!navLinks[0].classList.contains("active")) {
     activePage();
 
@@ -112,6 +120,21 @@ logoLink.addEventListener("click", () => {
     }, 1100);
   }
 });
+
+const activateInitialHash = () => {
+  const target = window.location.hash.replace("#", "");
+  const targetIndex = getSectionIndex(target);
+
+  if (targetIndex <= 0) return;
+
+  navLinks.forEach((link) => link.classList.remove("active"));
+  sections.forEach((section) => section.classList.remove("active"));
+
+  navLinks[targetIndex].classList.add("active");
+  sections[targetIndex].classList.add("active");
+};
+
+activateInitialHash();
 
 const resumeBtns = document.querySelectorAll(".resume-btn");
 

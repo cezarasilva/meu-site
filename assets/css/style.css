@@ -233,6 +233,14 @@ section.active {
 .home-detail .btn-sci {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
 .btn {
@@ -255,8 +263,23 @@ section.active {
   box-shadow: none;
 }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--main-color);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
 .home-detail .btn-sci .sci {
-  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 0;
 }
 
 .home-detail .btn-sci .sci a {
@@ -266,7 +289,7 @@ section.active {
   border-radius: 50%;
   font-size: 2rem;
   color: var(--main-color);
-  margin: 0 0.8rem;
+  margin: 0;
   transition: 0.5s;
 }
 
@@ -274,6 +297,37 @@ section.active {
   background: var(--main-color);
   color: var(--bg-color);
   box-shadow: 0 0 1rem var(--main-color);
+}
+
+.home-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+  max-width: 64rem;
+  margin-top: 2.6rem;
+}
+
+.home-highlights div {
+  min-height: 8.8rem;
+  padding: 1.6rem;
+  background: rgba(50, 57, 70, 0.72);
+  border: 0.1rem solid rgba(0, 108, 232, 0.28);
+  border-radius: 0.8rem;
+}
+
+.home-highlights strong {
+  display: block;
+  font-family: var(--font-heading);
+  color: var(--main-color);
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.home-highlights span {
+  display: block;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.35rem;
+  line-height: 1.35;
 }
 
 /* IMAGEM HOME */
@@ -348,6 +402,15 @@ section.active {
 
 .heading span {
   color: var(--main-color);
+}
+
+.section-intro {
+  max-width: 70rem;
+  margin: -0.5rem auto 3rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.65rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* SERVICES SECTION  */
@@ -983,6 +1046,20 @@ section.active {
     height: 30rem;
   }
 
+  .home-detail .btn-sci,
+  .home-actions {
+    justify-content: center;
+  }
+
+  .home-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .section-intro {
+    margin-bottom: 2.4rem;
+    font-size: 1.5rem;
+  }
+
   .contact-box .field-box {
     grid-template-columns: 1fr;
   }
@@ -1005,12 +1082,11 @@ section.active {
   }
 
   .home-detail .btn-sci {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .home-detail .btn-sci .sci {
-    margin-left: 0;
-    margin-bottom: 2rem;
+    margin: 0;
   }
 
   .contact-box form {

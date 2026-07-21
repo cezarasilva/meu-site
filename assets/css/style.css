@@ -669,6 +669,24 @@ section.active {
   transform: translateX(-50%) scale(1);
 }
 
+.portifolio-box .case-link {
+  margin-top: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.portifolio-box .case-link:hover {
+  text-decoration: underline;
+}
+
+.portifolio-box .case-link i {
+  font-size: 2rem;
+}
+
 .portifolio-box .portifolio-carousel {
   width: 100%;
   height: 45rem;
@@ -687,6 +705,11 @@ section.active {
 
 .portifolio-carousel .img-item {
   height: inherit;
+}
+
+.portifolio-carousel .img-item > a {
+  display: block;
+  height: 100%;
 }
 
 .portifolio-carousel .img-item img {

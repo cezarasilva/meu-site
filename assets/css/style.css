@@ -643,10 +643,6 @@ section.active {
   margin-right: 1.5rem;
 }
 
-.portifolio-box .live-github a:first-child i {
-  transform: rotate(135deg);
-}
-
 .portifolio-box .live-github a span {
   position: absolute;
   top: -60%;

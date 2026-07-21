@@ -36,7 +36,7 @@ function animateFrom(items, options = {}) {
 function initCaseAnimations() {
   if (!hasGsap) return;
 
-  animateFrom(document.querySelectorAll(".case-header, .hero-copy > *, .hero-badge"), {
+  animateFrom(document.querySelectorAll(".case-header, .hero-copy > *"), {
     y: 24,
     stagger: 0.07,
   });

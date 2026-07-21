@@ -364,6 +364,9 @@ section.active {
   border: 0.2rem solid var(--second-bg-color);
   border-radius: 1rem;
   transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  min-height: 39rem;
 }
 
 .services-container .services-box:hover {
@@ -383,37 +386,14 @@ section.active {
   transition: 0.3s;
 }
 
-.services-box:hover .icon :not(a i) {
+.services-box:hover .icon > i {
   color: var(--main-color);
-}
-
-.services-box .icon a {
-  display: inline-flex;
-  background: var(--white-color);
-  border-radius: 50%;
-  padding: 0.5rem;
-  transition: 0.3s;
-}
-
-.services-box:hover .icon a {
-  background: var(--main-color);
-}
-
-.services-box .icon a i {
-  font-size: 2rem;
-  color: var(--bg-color);
-  transform: rotate(225deg);
-  transition: 0.2s;
-}
-
-.services-box .icon a:hover i {
-  transform: rotate(180deg);
 }
 
 .services-box h3 {
   font-family: var(--font-heading);
-  font-size: 3rem;
-  margin: 0.5rem 0 2rem;
+  font-size: 2.8rem;
+  margin: 0.5rem 0 1.4rem;
   transition: 0.3s;
 }
 
@@ -423,6 +403,66 @@ section.active {
 
 .services-box p {
   font-size: 1.6rem;
+  line-height: 1.65;
+}
+
+.service-points {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0 2.4rem;
+  list-style: none;
+}
+
+.service-points li {
+  position: relative;
+  padding-left: 2rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.service-points li::before {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  margin-top: auto;
+  padding: 1.1rem 1.6rem;
+  color: var(--white-color);
+  background: rgba(0, 108, 232, 0.13);
+  border: 0.1rem solid rgba(0, 108, 232, 0.55);
+  border-radius: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.service-cta i {
+  color: var(--main-color);
+  font-size: 2rem;
+}
+
+.service-cta:hover {
+  color: var(--bg-color);
+  background: var(--main-color);
+  box-shadow: 0 0 1rem rgba(0, 108, 232, 0.55);
+}
+
+.service-cta:hover i {
+  color: var(--bg-color);
 }
 
 /* RESUME SECTION  */
